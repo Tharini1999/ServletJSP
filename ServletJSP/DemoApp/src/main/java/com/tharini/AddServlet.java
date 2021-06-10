@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -20,11 +21,10 @@ public class AddServlet extends HttpServlet{
 		
 		int k = i+j;
 		
-		
 		/*Cookies*/
-		Cookie cookie = new Cookie("k",k+"");
-		res.addCookie(cookie);
-		res.sendRedirect("sq");
+		//Cookie cookie = new Cookie("k",k+"");
+		//res.addCookie(cookie);
+		//res.sendRedirect("sq");
 		
 		/*SESSION*/
 		//HttpSession session = req.getSession();
@@ -36,9 +36,9 @@ public class AddServlet extends HttpServlet{
 		
 		
 		/*REQUEST DISPATCHER*/
-		//req.setAttribute("result",result);
-		//RequestDispatcher rq = req.getRequestDispatcher("sq");
-		//rq.forward(req, res);
+		req.setAttribute("k",k);
+		RequestDispatcher rq = req.getRequestDispatcher("sq");
+		rq.forward(req, res);
 		
 	}
 }

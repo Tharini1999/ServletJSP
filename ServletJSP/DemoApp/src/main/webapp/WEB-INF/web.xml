@@ -13,10 +13,26 @@
   <servlet>
   	<servlet-name>second</servlet-name>
   	<servlet-class>com.tharini.sqServlet</servlet-class>
+  	
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>unknown</param-value>
+  	</init-param>
+  	
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>second</servlet-name>
   	<url-pattern>/sq</url-pattern>
   </servlet-mapping>
+  
+  <context-param>
+  <param-name>name</param-name>
+  <param-value>Tharini</param-value>
+  </context-param>
+  
+  <context-param>
+  <param-name>dob</param-name>
+  <param-value>19-09-1999</param-value>
+  </context-param>
 </web-app>
